@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5yclmveiy6gh"]
+
+[ext_resource type="Script" uid="uid://cnlkt37x1se6f" path="res://Scripts/GodotCredits.gd" id="1_nkphu"]
+[ext_resource type="AudioStream" uid="uid://ljdkhsb3m4ke" path="res://Assets/Sounds/Drifting Memories(future).mp3" id="2_44ctk"]
+[ext_resource type="AudioStream" uid="uid://c5tbtr4w0iscw" path="res://Assets/Sounds/Floating Dream(preseent.mp3" id="3_une8v"]
+[ext_resource type="AudioStream" uid="uid://5st4jgu2xdya" path="res://Assets/Sounds/Strange Worlds(past).mp3" id="4_f6201"]
+
+[node name="GodotCredits" type="Node2D"]
+script = ExtResource("1_nkphu")
+menu_tracks = Array[AudioStream]([ExtResource("2_44ctk"), ExtResource("3_une8v"), ExtResource("4_f6201")])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 500.0
+offset_bottom = 5000.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(28.88, 1)
+color = Color(0, 0, 0, 1)
+
+[node name="CreditsContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Line" type="Label" parent="CreditsContainer"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 2160.0
+offset_bottom = 696.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 50
+text = "Credits line"
+horizontal_alignment = 1
+
+[node name="CreditMusic" type="AudioStreamPlayer" parent="."]

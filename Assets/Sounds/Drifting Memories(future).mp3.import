@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ljdkhsb3m4ke"
+path="res://.godot/imported/Drifting Memories(future).mp3-85c233e6c6362b3d9b7596a64bbc0c04.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Drifting Memories(future).mp3"
+dest_files=["res://.godot/imported/Drifting Memories(future).mp3-85c233e6c6362b3d9b7596a64bbc0c04.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

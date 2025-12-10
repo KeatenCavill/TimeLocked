@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=3 uid="uid://dytw7h64q4q6s"]
+
+[ext_resource type="Script" uid="uid://iwgcrc7sj6ym" path="res://Scripts/main_menu.gd" id="1_3kf3n"]
+[ext_resource type="Texture2D" uid="uid://dmke4pe1hc5tn" path="res://Assets/menubg(1).png" id="2_6pedr"]
+[ext_resource type="AudioStream" uid="uid://ljdkhsb3m4ke" path="res://Assets/Sounds/Drifting Memories(future).mp3" id="2_ma218"]
+[ext_resource type="AudioStream" uid="uid://c5tbtr4w0iscw" path="res://Assets/Sounds/Floating Dream(preseent.mp3" id="3_idohh"]
+[ext_resource type="AudioStream" uid="uid://5st4jgu2xdya" path="res://Assets/Sounds/Strange Worlds(past).mp3" id="4_wfhf6"]
+
+[node name="Menu" type="Control"]
+modulate = Color(0.7852611, 0.7852611, 0.7852611, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3kf3n")
+menu_tracks = Array[AudioStream]([ExtResource("2_ma218"), ExtResource("3_idohh"), ExtResource("4_wfhf6")])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -198.0
+offset_top = -290.0
+offset_right = 198.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Start"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Quit"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -672.0
+offset_top = -485.0
+offset_right = 69.0
+offset_bottom = -156.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.8110734, 1.8288503)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 25
+text = "											TimeLocked
+										       	Demo
+
+WASD to move,
+
+you can use either 1 2 or 3 to jump between time
+
+esc to quit
+
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 231.0
+offset_top = 630.0
+offset_right = 724.0
+offset_bottom = 1011.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "WASD to move,
+
+you can use either 1 2 or 3 to jump between \"times\"
+or 
+right click, 
+middle click, 
+and left click
+
+esc to quit"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -50
+position = Vector2(956, 541)
+texture = ExtResource("2_6pedr")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,199 @@
+[gd_scene load_steps=7 format=3 uid="uid://cb8ocw3c8y0yb"]
+
+[ext_resource type="PackedScene" uid="uid://cvup0x2rqfwqd" path="res://Scenes/Level2/Platform2.tscn" id="1_u82b0"]
+[ext_resource type="Texture2D" uid="uid://bqemdm6ihah68" path="res://Assets/Jungle/Background/bg1_far.png" id="2_b27yo"]
+[ext_resource type="Texture2D" uid="uid://dymscfvxmn4b8" path="res://Assets/Jungle/Background/bg2_near.png" id="3_bwxna"]
+[ext_resource type="PackedScene" uid="uid://b4jaj3p5s1qm0" path="res://Scenes/Coin.tscn" id="4_bwxna"]
+[ext_resource type="Script" uid="uid://b8tybi5k7nkyw" path="res://Scripts/EndTigger.gd" id="5_bkhg0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nvn4"]
+size = Vector2(1171, 445.6748)
+
+[node name="Level2" type="Node2D"]
+
+[node name="Platform2" parent="." instance=ExtResource("1_u82b0")]
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="background"]
+z_index = -500
+position = Vector2(-535.00024, 286.99997)
+scale = Vector2(20, 19.2)
+texture = ExtResource("2_b27yo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="background"]
+z_index = -50
+position = Vector2(-525.9999, 242)
+scale = Vector2(20, 18.848)
+texture = ExtResource("3_bwxna")
+
+[node name="Sprite2D3" type="Sprite2D" parent="background"]
+z_index = -500
+position = Vector2(5868, 1412.4081)
+scale = Vector2(20, 19.2)
+texture = ExtResource("2_b27yo")
+
+[node name="Sprite2D4" type="Sprite2D" parent="background"]
+z_index = -50
+position = Vector2(5884.999, 1330.408)
+scale = Vector2(20, 18.848)
+texture = ExtResource("3_bwxna")
+
+[node name="Sprite2D5" type="Sprite2D" parent="background"]
+z_index = -500
+position = Vector2(5594, 5373.4087)
+scale = Vector2(20, 19.2)
+texture = ExtResource("2_b27yo")
+
+[node name="Sprite2D6" type="Sprite2D" parent="background"]
+z_index = -50
+position = Vector2(5602.9985, 5328.408)
+scale = Vector2(20, 18.848)
+texture = ExtResource("3_bwxna")
+
+[node name="Sprite2D7" type="Sprite2D" parent="background"]
+z_index = -500
+position = Vector2(12237, 1478.408)
+scale = Vector2(20, 19.2)
+texture = ExtResource("2_b27yo")
+
+[node name="Sprite2D8" type="Sprite2D" parent="background"]
+z_index = -50
+position = Vector2(12245.997, 1433.408)
+scale = Vector2(20, 18.848)
+texture = ExtResource("3_bwxna")
+
+[node name="Sprite2D9" type="Sprite2D" parent="background"]
+z_index = -500
+position = Vector2(18637, 1502.408)
+scale = Vector2(20, 19.2)
+texture = ExtResource("2_b27yo")
+
+[node name="Sprite2D10" type="Sprite2D" parent="background"]
+z_index = -50
+position = Vector2(18645.996, 1457.408)
+scale = Vector2(20, 18.848)
+texture = ExtResource("3_bwxna")
+
+[node name="coins" type="Node2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="Coin" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(56, -9)
+
+[node name="Coin12" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(-2731, 451)
+
+[node name="Coin2" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(1476, -299)
+
+[node name="Coin3" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(255, 520)
+
+[node name="Coin4" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(122, 648)
+
+[node name="Coin5" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(-648, 458)
+
+[node name="Coin6" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(-2020, 695)
+
+[node name="Coin7" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(-2322, -41)
+
+[node name="Coin8" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(-2028, -44)
+
+[node name="Coin9" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(-1988, -624)
+
+[node name="Coin10" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(-2279, -615)
+
+[node name="Coin11" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(-1139, -559)
+
+[node name="Coin13" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(-802, 1415)
+
+[node name="Coin14" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(443, 1587)
+
+[node name="Coin15" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(735, 1334)
+
+[node name="Coin16" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(1618, 1195)
+
+[node name="Coin17" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(2819, 1181)
+
+[node name="Coin18" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(3447, 670)
+
+[node name="Coin19" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(-3418, -499)
+
+[node name="Coin20" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(5054, 1593)
+
+[node name="Coin21" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(4408, 1803)
+
+[node name="Coin22" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(4481, 1213)
+
+[node name="Coin23" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(6129, -41)
+
+[node name="Coin24" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(5337, -44)
+
+[node name="Coin25" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(8261, -39)
+
+[node name="Coin37" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(18684, 814)
+
+[node name="Coin36" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(17866, 913)
+
+[node name="Coin35" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(17512, 898)
+
+[node name="Coin34" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(16618, 1521)
+
+[node name="Coin33" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(15861, 1496)
+
+[node name="Coin32" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(14551, 1603)
+
+[node name="Coin31" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(13795, 1471)
+
+[node name="Coin30" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(10223, 788)
+
+[node name="Coin29" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(9466, 1276)
+
+[node name="Coin28" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(9816, 1785)
+
+[node name="Coin27" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(10849, 2594)
+
+[node name="Coin26" parent="coins" instance=ExtResource("4_bwxna")]
+position = Vector2(7014, 2643)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_bkhg0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(18143, 1317)
+shape = SubResource("RectangleShape2D_3nvn4")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

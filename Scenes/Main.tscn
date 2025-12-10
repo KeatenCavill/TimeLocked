@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2x8mryjdfvjy"]
+
+[ext_resource type="PackedScene" uid="uid://ci7ob7sm5tawr" path="res://Scenes/Character.tscn" id="1_idj7w"]
+[ext_resource type="Script" uid="uid://btm0omwwqjouu" path="res://Scripts/main.gd" id="1_kln2b"]
+[ext_resource type="PackedScene" uid="uid://dsfmpq642nsej" path="res://Scenes/Level1/Level1.tscn" id="2_kln2b"]
+[ext_resource type="PackedScene" uid="uid://cb8ocw3c8y0yb" path="res://Scenes/Level2/Level2.tscn" id="4_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://ddmyndsiqb7av" path="res://Scenes/Level3/Level3.tscn" id="5_v1gob"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_kln2b")
+
+[node name="Character" parent="." instance=ExtResource("1_idj7w")]
+position = Vector2(-245, 54)
+scale = Vector2(2, 2)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Flash" type="ColorRect" parent="UI"]
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1.3438236, 1.3438236, 1.3438236, 1)
+
+[node name="Coins" type="Label" parent="UI"]
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 68.0
+offset_bottom = 29.0
+scale = Vector2(3, 3)
+theme_override_constants/outline_size = 3
+text = "Coins: 0"
+
+[node name="BlackFade" type="ColorRect" parent="UI"]
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LevelHolder" type="Node" parent="."]
+
+[node name="Level" parent="LevelHolder" instance=ExtResource("2_kln2b")]
+position = Vector2(0, 7)
+metadata/_edit_lock_ = true
+
+[node name="Level2" parent="LevelHolder" instance=ExtResource("4_pbw6q")]
+position = Vector2(0, 10090)
+metadata/_edit_lock_ = true
+
+[node name="Level3" parent="LevelHolder" instance=ExtResource("5_v1gob")]
+position = Vector2(0, -9900)
+metadata/_edit_lock_ = true
