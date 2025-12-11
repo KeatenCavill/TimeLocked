@@ -64,6 +64,11 @@ var credits = [
 		"High qualtiy Foggy Cliffs - Fantasy Tileset by aamatnikess",
 		"",
 		"Coin, Potion, Gem assets by Hypedigi",
+		"",
+		"pixel art animated slime by Rvros",
+		"",
+		"Keyboard icons by Casper Gaming and Fauster",
+		"",
 	],[
 		
 	],[
@@ -78,6 +83,8 @@ var credits = [
 		"'Clock Ticking' by RedDog0607",
 		"",
 		"'Whoosh Cinematic Sound Effect' by DRAGON-STUDIO",
+		"",
+		"'Single book paging' found on mixkit"
 	],[
 		
 	],[
@@ -85,6 +92,7 @@ var credits = [
 		"",
 		"Developed with Godot Engine",
 		"",
+		"Some photo editing using Photopea",
 	],[
 		
 		"You Collected :",

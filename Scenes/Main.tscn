@@ -1,13 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2x8mryjdfvjy"]
+[gd_scene load_steps=13 format=3 uid="uid://c2x8mryjdfvjy"]
 
 [ext_resource type="PackedScene" uid="uid://ci7ob7sm5tawr" path="res://Scenes/Character.tscn" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://btm0omwwqjouu" path="res://Scripts/main.gd" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://dsfmpq642nsej" path="res://Scenes/Level1/Level1.tscn" id="2_kln2b"]
+[ext_resource type="Texture2D" uid="uid://dnfrnw56lb1u3" path="res://Assets/Map/PresentMap.png" id="3_vy5pj"]
+[ext_resource type="Texture2D" uid="uid://dgk7rrl5bc02q" path="res://Assets/Map/FutureMap.png" id="4_bmxlf"]
 [ext_resource type="PackedScene" uid="uid://cb8ocw3c8y0yb" path="res://Scenes/Level2/Level2.tscn" id="4_pbw6q"]
+[ext_resource type="Texture2D" uid="uid://cf5flkl4ssvm4" path="res://Assets/Map/PastMap.png" id="5_4kpch"]
 [ext_resource type="PackedScene" uid="uid://ddmyndsiqb7av" path="res://Scenes/Level3/Level3.tscn" id="5_v1gob"]
+[ext_resource type="PackedScene" uid="uid://dljyp08rty7v2" path="res://Scenes/Enemy.tscn" id="6_v1gob"]
+[ext_resource type="Texture2D" uid="uid://pu1gw4uuj2pv" path="res://Assets/mz-keyboard-icons/keyboardIcons.png" id="10_bmxlf"]
+[ext_resource type="Texture2D" uid="uid://xslavs7kfrx4" path="res://Assets/mz-keyboard-icons/keyboard-pictures/BlackSpacea1.png" id="11_4kpch"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1gob"]
+bg_color = Color(0.5280534, 0.30644247, 9.62615e-08, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_kln2b")
+metadata/_edit_horizontal_guides_ = [-46.0, 515.0, 516.0, 563.0]
 
 [node name="Character" parent="." instance=ExtResource("1_idj7w")]
 position = Vector2(-245, 54)
@@ -42,6 +57,58 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="MapPopup" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.99994
+offset_top = -322.0
+offset_right = -360.99994
+offset_bottom = -282.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(15, 15)
+
+[node name="ColorRect" type="Panel" parent="UI/MapPopup"]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1gob")
+
+[node name="MapImage" type="TextureRect" parent="UI/MapPopup/ColorRect"]
+layout_mode = 0
+offset_top = 12.0
+offset_bottom = 12.0
+scale = Vector2(0.05, 0.05)
+
+[node name="PresentMap" type="TextureRect" parent="UI/MapPopup/ColorRect/MapImage"]
+visible = false
+layout_mode = 0
+offset_left = 10.666687
+offset_right = 1187.6667
+offset_bottom = 275.0
+texture = ExtResource("3_vy5pj")
+
+[node name="FutureMap" type="TextureRect" parent="UI/MapPopup/ColorRect/MapImage"]
+visible = false
+layout_mode = 0
+offset_left = 80.0
+offset_right = 1120.0
+offset_bottom = 269.0
+texture = ExtResource("4_bmxlf")
+
+[node name="PastMap" type="TextureRect" parent="UI/MapPopup/ColorRect/MapImage"]
+visible = false
+layout_mode = 0
+offset_left = 74.66669
+offset_right = 1135.6667
+offset_bottom = 273.0
+texture = ExtResource("5_4kpch")
+
 [node name="LevelHolder" type="Node" parent="."]
 
 [node name="Level" parent="LevelHolder" instance=ExtResource("2_kln2b")]
@@ -55,3 +122,433 @@ metadata/_edit_lock_ = true
 [node name="Level3" parent="LevelHolder" instance=ExtResource("5_v1gob")]
 position = Vector2(0, -9900)
 metadata/_edit_lock_ = true
+
+[node name="enemy_scene" type="Node" parent="."]
+
+[node name="Enemy" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-29.664307, 12.246994)
+
+[node name="Enemy2" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(1226.0446, 621.8697)
+
+[node name="Enemy3" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-2095.1028, 1189.1448)
+
+[node name="Enemy4" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-2246.3171, 19.366638)
+
+[node name="Enemy5" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-2140.7515, -568.37537)
+
+[node name="Enemy6" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-3301.9705, -431.42642)
+
+[node name="Enemy7" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(113.21173, 1605.6995)
+
+[node name="Enemy8" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(4572.6343, 2030.8137)
+
+[node name="Enemy9" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(2295.8462, 1269.0316)
+
+[node name="Enemy10" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(6135.7363, 11.196045)
+
+[node name="Enemy11" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(6476.2476, 2727.2937)
+
+[node name="Enemy12" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(7936.0303, 52.094543)
+
+[node name="Enemy13" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(9854.54, 1831.2731)
+
+[node name="Enemy14" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(10681.967, 828.0735)
+
+[node name="Enemy15" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(13807.309, 1469.0067)
+
+[node name="Enemy16" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(16193.12, 1516.1656)
+
+[node name="Enemy17" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(17505.006, 975.9812)
+
+[node name="Enemy18" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(14939.771, 11687.693)
+
+[node name="Enemy19" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(11136, 10869)
+
+[node name="Enemy20" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(7762.1704, 12720.241)
+
+[node name="Enemy21" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(8436.933, 12720.241)
+
+[node name="Enemy22" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(6936.7646, 10840.317)
+
+[node name="Enemy23" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(7721.3726, 10014.911)
+
+[node name="Enemy24" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(5844.5874, 9989.799)
+
+[node name="Enemy25" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(4592.353, 11800.677)
+
+[node name="Enemy26" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(3033, 11044)
+
+[node name="Enemy27" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(1755.2141, 11292.254)
+
+[node name="Enemy28" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-348, 11534)
+
+[node name="Enemy29" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-1697.0574, 11157.299)
+
+[node name="Enemy30" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-1518.167, 10055.71)
+
+[node name="Enemy31" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-1122.7249, 11138.469)
+
+[node name="Enemy32" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-3319.6243, 9566.11)
+
+[node name="Enemy33" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-275.34943, 10495.085)
+
+[node name="Enemy34" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-270.7823, -9964.874)
+
+[node name="Enemy35" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(519.09753, -9961.077)
+
+[node name="Enemy36" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-1535.3496, -8859.806)
+
+[node name="Enemy37" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-2196.1145, -8977.527)
+
+[node name="Enemy38" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-2298.6467, -9961.082)
+
+[node name="Enemy39" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-2822.7017, -9471.204)
+
+[node name="Enemy40" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-2788.5242, -10481.339)
+
+[node name="Enemy41" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-2230.2917, -10530.707)
+
+[node name="Enemy42" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-1204.9664, -10466.152)
+
+[node name="Enemy43" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(-1014.8716, -8439.4795)
+
+[node name="Enemy44" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(350.34476, -8357.88)
+
+[node name="Enemy45" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(1628, -8722)
+
+[node name="Enemy46" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(2512.722, -8718.808)
+
+[node name="Enemy47" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(3438.5583, -9183.299)
+
+[node name="Enemy48" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(7780.91, -10007.658)
+
+[node name="Enemy49" parent="enemy_scene" instance=ExtResource("6_v1gob")]
+position = Vector2(5547.751, -10067.392)
+
+[node name="MapCamera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(1433, 627)
+zoom = Vector2(0.07, 0.1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Tutorial" type="Node2D" parent="."]
+
+[node name="WASD" type="Panel" parent="Tutorial"]
+offset_left = -381.0
+offset_top = -109.0
+offset_right = -7.0
+offset_bottom = -16.0
+
+[node name="w" type="Sprite2D" parent="Tutorial/WASD"]
+position = Vector2(109, 16.5)
+texture = ExtResource("10_bmxlf")
+region_enabled = true
+region_rect = Rect2(385, 543, 30, 33)
+
+[node name="A" type="Sprite2D" parent="Tutorial/WASD"]
+position = Vector2(79, 48.5)
+texture = ExtResource("10_bmxlf")
+region_enabled = true
+region_rect = Rect2(1, 480, 30, 31)
+
+[node name="S" type="Sprite2D" parent="Tutorial/WASD"]
+position = Vector2(109, 48.5)
+texture = ExtResource("10_bmxlf")
+region_enabled = true
+region_rect = Rect2(128, 544, 31, 31)
+
+[node name="D" type="Sprite2D" parent="Tutorial/WASD"]
+position = Vector2(140, 48.5)
+texture = ExtResource("10_bmxlf")
+region_enabled = true
+region_rect = Rect2(193, 481, 30, 30)
+
+[node name="up" type="Sprite2D" parent="Tutorial/WASD"]
+position = Vector2(244, 18)
+texture = ExtResource("10_bmxlf")
+region_enabled = true
+region_rect = Rect2(65, 641, 30, 30)
+
+[node name="right" type="Sprite2D" parent="Tutorial/WASD"]
+position = Vector2(214, 48)
+texture = ExtResource("10_bmxlf")
+region_enabled = true
+region_rect = Rect2(1, 641, 30, 30)
+
+[node name="down" type="Sprite2D" parent="Tutorial/WASD"]
+position = Vector2(244, 48)
+texture = ExtResource("10_bmxlf")
+region_enabled = true
+region_rect = Rect2(129, 641, 30, 30)
+
+[node name="left" type="Sprite2D" parent="Tutorial/WASD"]
+position = Vector2(274, 48)
+texture = ExtResource("10_bmxlf")
+region_enabled = true
+region_rect = Rect2(193, 640, 30, 31)
+
+[node name="Label" type="Label" parent="Tutorial/WASD"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 40.0
+offset_right = 63.0
+offset_bottom = 63.0
+text = "Press: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Tutorial/WASD"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 40.0
+offset_right = 203.0
+offset_bottom = 63.0
+text = "or"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Tutorial/WASD"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 40.0
+offset_right = 361.0
+offset_bottom = 63.0
+text = "to move"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Jump" type="Panel" parent="Tutorial"]
+offset_left = 576.0
+offset_top = -82.0
+offset_right = 821.0
+offset_bottom = -9.0
+
+[node name="w" type="Sprite2D" parent="Tutorial/Jump"]
+position = Vector2(97, 22)
+texture = ExtResource("11_4kpch")
+
+[node name="Label" type="Label" parent="Tutorial/Jump"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 63.0
+offset_bottom = 32.0
+text = "Press: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Tutorial/Jump"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 11.0
+offset_right = 199.0
+offset_bottom = 34.0
+text = "to jump."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Tutorial/Jump"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 40.0
+offset_right = 235.0
+offset_bottom = 63.0
+text = "Press it twice to double jump."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attack" type="Panel" parent="Tutorial"]
+offset_left = 1488.0
+offset_top = 490.0
+offset_right = 1683.0
+offset_bottom = 536.0
+
+[node name="w" type="Sprite2D" parent="Tutorial/Attack"]
+position = Vector2(82, 24)
+texture = ExtResource("10_bmxlf")
+region_enabled = true
+region_rect = Rect2(257, 481, 30, 30)
+
+[node name="Label" type="Label" parent="Tutorial/Attack"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 63.0
+offset_bottom = 32.0
+text = "Press: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Tutorial/Attack"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 11.0
+offset_right = 181.0
+offset_bottom = 34.0
+text = "to attack."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attack2" type="Panel" parent="Tutorial"]
+offset_left = -138.0
+offset_top = 310.0
+offset_right = 108.0
+offset_bottom = 356.0
+
+[node name="w" type="Sprite2D" parent="Tutorial/Attack2"]
+position = Vector2(82, 24)
+texture = ExtResource("10_bmxlf")
+region_enabled = true
+region_rect = Rect2(320, 673, 32, 30)
+
+[node name="Label" type="Label" parent="Tutorial/Attack2"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 63.0
+offset_bottom = 32.0
+text = "Press: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Tutorial/Attack2"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 11.0
+offset_right = 181.0
+offset_bottom = 34.0
+text = "to open the map."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeJump" type="Panel" parent="Tutorial"]
+offset_left = 435.0
+offset_top = 430.0
+offset_right = 723.0
+offset_bottom = 580.0
+
+[node name="1" type="Sprite2D" parent="Tutorial/TimeJump"]
+position = Vector2(82, 24)
+texture = ExtResource("10_bmxlf")
+region_enabled = true
+region_rect = Rect2(1, 417, 30, 30)
+
+[node name="3" type="Sprite2D" parent="Tutorial/TimeJump"]
+position = Vector2(82, 119)
+texture = ExtResource("10_bmxlf")
+region_enabled = true
+region_rect = Rect2(129, 417, 30, 30)
+
+[node name="2" type="Sprite2D" parent="Tutorial/TimeJump"]
+position = Vector2(82, 71)
+texture = ExtResource("10_bmxlf")
+region_enabled = true
+region_rect = Rect2(65, 417, 30, 30)
+
+[node name="Label" type="Label" parent="Tutorial/TimeJump"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 36.0
+text = "Press: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Tutorial/TimeJump"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 110.0
+offset_right = 63.0
+offset_bottom = 133.0
+text = "Press: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Tutorial/TimeJump"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 63.0
+offset_right = 63.0
+offset_bottom = 86.0
+text = "Press: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Tutorial/TimeJump"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 15.0
+offset_right = 256.0
+offset_bottom = 38.0
+text = "to travel to the past"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Tutorial/TimeJump"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 61.0
+offset_right = 256.0
+offset_bottom = 84.0
+text = "to travel to the present"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Tutorial/TimeJump"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 109.0
+offset_right = 282.0
+offset_bottom = 132.0
+text = "to travel to the future"
+horizontal_alignment = 1
+vertical_alignment = 1
